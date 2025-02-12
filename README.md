@@ -33,9 +33,11 @@ import attrarchy as aa
 @aa.infuse
 class Test:
     attr: float = 1.
+    attr2: int = 2
 
-test = Test()
-test.attr()  # == 1.
+test = Test(attr=5.)
+print(test.attr())  # 5.
+print(test.attr2())  # 2
 ```
 
 Note that typecheck is likely to protest that `Test.attr` is defined as float and therefore is not callable.
