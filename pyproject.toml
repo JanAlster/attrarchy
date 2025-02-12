@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Attrarchy"
+version = "0.5.0"
+authors = [
+  { name="Jan Alster", email="alster@post.cz" },
+]
+description = "Dataclass-like class attributes hierarchical system"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = { text = "GPL-3.0-only" }
+
+
+#[project.urls]
+#"Homepage" = "https://github.com/pypa/sampleproject"
+#"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
+
+
+# let's go with a single module distribution
+#  this will work if we place params.py direcly into params directory
+# not sure if I want to make tests public as well, probably not...
+# but we need some examples, those might be left in github, but not on pypi package
+# and we need documentation, which will be a handwritten text file for now
+[tool.setuptools]
+py-modules = ["attrarchy"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+#addopts = "-ra -q"
+log_cli = true
+log_cli_level = "DEBUG"
+testpaths = [
+    "tests",
+    "integration",
+]
